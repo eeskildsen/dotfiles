@@ -1,0 +1,2 @@
+#!/bin/sh
+'feh' '--bg-scale' '/home/eric/Pictures/abstract-peach-sherbet-rainbow.jpg' 
