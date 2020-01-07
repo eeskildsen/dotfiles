@@ -117,3 +117,5 @@ if ! shopt -oq posix; then
 fi
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+export PATH="$PATH:/opt/mssql-tools/bin"
