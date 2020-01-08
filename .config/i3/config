@@ -15,8 +15,8 @@ bindsym $mod+q kill
 bindsym $mod+Shift+q [class=".*"] kill
 
 # session
-bindsym $mod+Shift+s xfce4-session-logout --suspend
-bindsym $mod+Ctrl+Shift+s xfce4-session-logout --fast
+bindsym $mod+Shift+s exec "xfce4-session-logout --suspend"
+bindsym $mod+Ctrl+Shift+s exec "xfce4-session-logout --fast"
 
 # start rofi (launchpad and window switcher)
 bindsym $mod+space exec "rofi -show run"
