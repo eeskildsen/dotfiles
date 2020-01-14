@@ -1,4 +1,4 @@
-set $mod Mod4
+set $mod Mod1+Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -15,9 +15,9 @@ bindsym $mod+q kill
 bindsym $mod+Shift+q [class=".*"] kill
 
 # session
-bindsym $mod+Shift+s exec "xfce4-session-logout --suspend"
-bindsym $mod+Ctrl+Shift+s exec "xfce4-session-logout --halt --fast"
-bindsym $mod+Ctrl+Shift+r exec "xfce4-session-logout --reboot"
+# bindsym $mod+Shift+s exec "xfce4-session-logout --suspend"
+# bindsym $mod+Ctrl+Shift+s exec "xfce4-session-logout --halt --fast"
+# bindsym $mod+Ctrl+Shift+r exec "xfce4-session-logout --reboot"
 
 # start rofi (launchpad and window switcher)
 bindsym $mod+space exec "rofi -show run"
@@ -29,12 +29,6 @@ bindsym $mod+Ctrl+space exec "rofi -show window"
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
 # change focus
-bindsym $mod+j focus left
-bindsym $mod+k focus down
-bindsym $mod+l focus up
-bindsym $mod+semicolon focus right
-
-# alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
 bindsym $mod+Down focus down
 bindsym $mod+Up focus up
