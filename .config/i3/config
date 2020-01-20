@@ -137,6 +137,10 @@ gaps outer 10
 # Autostarts
 # #############################################################################
 
+# CopyQ (clipboard manager)
+exec copyq
+bindsym Mod1+grave exec "copyq menu"
+
 # Wallpaper
 exec_always --no-startup-id feh --bg-scale $HOME/Pictures/abstract-peach-sherbet-rainbow.jpg
 
