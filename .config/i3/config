@@ -10,6 +10,9 @@ floating_modifier $mod
 # start a terminal
 bindsym $mod+Return exec i3-sensible-terminal
 
+# start a browser
+bindsym $mod+Shift+Return exec google-chrome
+
 # kill
 bindsym $mod+q kill
 bindsym $mod+Shift+q [class=".*"] kill
