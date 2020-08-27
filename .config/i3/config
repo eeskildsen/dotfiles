@@ -1,17 +1,19 @@
-set $mod Mod1+Mod4
+set $mod Mod3
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
 font pango:monospace 8
 
+# client.focused #859900 #fde6eb #000000 #859900
+
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec konsole
 
 # start a browser
-bindsym $mod+Shift+Return exec google-chrome
+bindsym $mod+i exec firefox
 
 # kill
 bindsym $mod+q kill
@@ -22,14 +24,9 @@ bindsym $mod+Shift+q [class=".*"] kill
 # bindsym $mod+Ctrl+Shift+s exec "xfce4-session-logout --halt --fast"
 # bindsym $mod+Ctrl+Shift+r exec "xfce4-session-logout --reboot"
 
-# start rofi (launchpad and window switcher)
-bindsym $mod+space exec "rofi -show run"
-bindsym $mod+Ctrl+space exec "rofi -show window"
-
-# There also is the (new) i3-dmenu-desktop which only displays applications
-# shipping a .desktop file. It is a wrapper around dmenu, so you need that
-# installed.
-# bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
+# start rofi
+bindsym $mod+space exec "rofi -show run -hide-scrollbar -color-window \\"#ffffff, #ff6376, #ff6376\\" -color-normal \\"#ffffff, #5c5d61, #fde6eb, #ff6376, #fde6eb\\" -color-active \\"#ffffff, #5c5d61, #fde6eb, #ff6376, #fde6eb\\" -color-urgent \\"#ffffff, #5c5d61, #fde6eb, #ff6376, #fde6eb\\""
+bindsym Shift+space exec "rofi -show window -hide-scrollbar -color-window \\"#ffffff, #ff6376, #ff6376\\" -color-normal \\"#ffffff, #5c5d61, #fde6eb, #ff6376, #fde6eb\\" -color-active \\"#ffffff, #5c5d61, #fde6eb, #ff6376, #fde6eb\\" -color-urgent \\"#ffffff, #5c5d61, #fde6eb, #ff6376, #fde6eb\\""
 
 # change focus
 bindsym $mod+Left focus left
@@ -126,31 +123,24 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-# Start i3bar to display a workspace bar (plus the system information i3status
-# finds out, if available)
-bar {
-}
-
 # Gaps
 for_window [class=".*"] border pixel 0
 gaps inner 20
 gaps outer 10
 
-# #############################################################################
-# Autostarts
-# #############################################################################
+# KDE Plasma
+for_window [title="Desktop — Plasma"] kill; floating enable; border none
+for_window [class="plasmashell"] floating enable;
+for_window [class="Plasma"] floating enable; border none
+for_window [title="plasma-desktop"] floating enable; border none
+for_window [title="win7"] floating enable; border none
+for_window [class="krunner"] floating enable; border none
+for_window [class="Kmix"] floating enable; border none
+for_window [class="Klipper"] floating enable; border none
+for_window [class="Plasmoidviewer"] floating enable; border none
+for_window [class="(?i)*nextcloud*"] floating disable
+for_window [class="plasmashell" window_type="notification"] floating enable, border none, move right 700px, move down 450px
+no_focus [class="plasmashell" window_type="notification"] 
 
-# CopyQ (clipboard manager)
-exec copyq
-bindsym Mod1+grave exec "copyq menu"
-
-# Wallpaper
-exec_always --no-startup-id feh --bg-scale $HOME/Pictures/abstract-peach-sherbet-rainbow.jpg
-
-# Polybar
-exec_always --no-startup-id $HOME/.config/polybar/launch.sh
-
-# Pulse Audio
-bindsym XF86AudioRaiseVolume exec pactl set-sink-volume 0 +5% #increase sound volume
-bindsym XF86AudioLowerVolume exec pactl set-sink-volume 0 -5% #decrease sound volume
-bindsym XF86AudioMute exec pactl set-sink-mute 0 toggle # mute sound
+exec picom
+exec_always --no-startup-id feh --bg-scale $HOME/Pictures/vGHCbD2.png
