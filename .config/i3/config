@@ -26,7 +26,7 @@ bindsym $mod+Shift+q [class=".*"] kill
 
 # start rofi
 bindsym $mod+space exec "rofi -show run -hide-scrollbar -color-window \\"#ffffff, #ff6376, #ff6376\\" -color-normal \\"#ffffff, #5c5d61, #fde6eb, #ff6376, #fde6eb\\" -color-active \\"#ffffff, #5c5d61, #fde6eb, #ff6376, #fde6eb\\" -color-urgent \\"#ffffff, #5c5d61, #fde6eb, #ff6376, #fde6eb\\""
-bindsym Shift+space exec "rofi -show window -hide-scrollbar -color-window \\"#ffffff, #ff6376, #ff6376\\" -color-normal \\"#ffffff, #5c5d61, #fde6eb, #ff6376, #fde6eb\\" -color-active \\"#ffffff, #5c5d61, #fde6eb, #ff6376, #fde6eb\\" -color-urgent \\"#ffffff, #5c5d61, #fde6eb, #ff6376, #fde6eb\\""
+bindsym $mod+Shift+space exec "rofi -show window -hide-scrollbar -color-window \\"#ffffff, #ff6376, #ff6376\\" -color-normal \\"#ffffff, #5c5d61, #fde6eb, #ff6376, #fde6eb\\" -color-active \\"#ffffff, #5c5d61, #fde6eb, #ff6376, #fde6eb\\" -color-urgent \\"#ffffff, #5c5d61, #fde6eb, #ff6376, #fde6eb\\""
 
 # change focus
 bindsym $mod+Left focus left
@@ -55,7 +55,7 @@ bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
-bindsym $mod+Shift+space floating toggle
+bindsym $mod+Shift+f floating toggle
 
 # change focus between tiling / floating windows
 # bindsym $mod+space focus mode_toggle
