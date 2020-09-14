@@ -13,7 +13,7 @@ floating_modifier $mod
 bindsym $mod+Return exec konsole
 
 # start a browser
-bindsym $mod+i exec firefox
+bindsym $mod+i exec google-chrome
 
 # kill
 bindsym $mod+q kill
@@ -65,6 +65,9 @@ bindsym $mod+a focus parent
 
 # focus the child container
 #bindsym $mod+d focus child
+
+# rename window
+bindsym $mod+Mod1+r exec /usr/bin/local/rename-active-window.sh
 
 # switch to workspace
 bindsym $mod+1 workspace 1
