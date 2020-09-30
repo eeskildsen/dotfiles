@@ -67,7 +67,7 @@ bindsym $mod+a focus parent
 #bindsym $mod+d focus child
 
 # rename window
-bindsym $mod+Mod1+r exec /usr/bin/local/rename-active-window.sh
+bindsym $mod+Mod1+r exec xdotool getactivewindow set_window --name "$(printf '' | rofi -dmenu -p 'New window name')"
 
 # switch to workspace
 bindsym $mod+1 workspace 1
