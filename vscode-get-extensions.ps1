@@ -1,0 +1,1 @@
+gci /media/eric/Windows/Users/Admin/.vscode/extensions/*/package.json | % { gc $_ | ConvertFrom-Json } | select -ExpandProperty name | sort | Set-Content 'vscode-extensions.txt'

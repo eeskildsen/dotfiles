@@ -1,0 +1,14 @@
+change-case
+csharp
+csharpextensions
+docomment
+Encryptor
+powershell
+reflow-markdown
+svg
+vscode-antlr4
+vscode-autohotkey
+vscode-edit-csv
+vscode-quick-select
+vscode-subword-navigation
+xml
