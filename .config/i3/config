@@ -69,6 +69,16 @@ bindsym $mod+a focus parent
 # rename window
 bindsym $mod+Mod1+r exec xdotool getactivewindow set_window --name "$(printf '' | rofi -dmenu -p 'New window name')"
 
+# snippet management (todo)
+bindsym $mod+Shift+w mode "wurqinon"
+
+mode "wurqinon" {
+        bindsym c exec "qdbus org.kde.klipper /klipper setClipboardContents $(pwsh -F '/home/eric/w/personal/dotfiles/scripts/snippets-read.ps1' | rofi -dmenu -p 'Selection' | pwsh -F 'home/eric/w/personal/dotfiles/scripts/snippets-read.ps1')"; mode "default"
+
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
 # switch to workspace
 bindsym $mod+1 workspace 1
 bindsym $mod+2 workspace 2
