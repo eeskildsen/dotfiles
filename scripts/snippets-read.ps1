@@ -49,22 +49,15 @@ function GetSnippets
     $hashtable
 }
 
-function FormatFixedWidth
+$rootDirectory = Resolve-Path '~/w'
+if (Test-Path '~/wc')
 {
-    param([Parameter(Mandatory)][string]$Value, [Parameter(Mandatory)][int]$Length)
-
-    if ($Value.Length -gt $Length)
-    {
-        $Value.Substring(0, $Length - 3) + '...'
-    }
-    else
-    {
-        $Value.PadRight($Length)
-    }
+    $currentDirectory = (Get-Item '~/wc').Target
 }
-
-$rootDirectory = if ($null -ne [Environment]::GetEnvironmentVariable('WQDR')) { $env:WQDR } else { [IO.Path]::Combine($env:HOME, 'w') }
-$currentDirectory = if ($null -ne [Environment]::GetEnvironmentVariable('WQDC')) { $env:WQDC } else { [IO.Path]::Combine($env:HOME, 'w', 'amerisure') }
+else
+{
+    $currentDirectory = $rootDirectory
+}
 
 $filePaths = GetParentProjectFilenames -Path $currentDirectory
 
@@ -72,7 +65,7 @@ $snippets = GetSnippets -RootDirectory $rootDirectory -Paths $filePaths
 
 if ([string]::IsNullOrEmpty($Key))
 {
-    $snippets.GetEnumerator() | ForEach-Object { $_.Name }
+    $snippets.GetEnumerator() | Select-Object -ExpandProperty Name | Sort-Object
 }
 else
 {
