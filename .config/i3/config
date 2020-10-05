@@ -73,7 +73,9 @@ bindsym $mod+Mod1+r exec xdotool getactivewindow set_window --name "$(printf '' 
 bindsym $mod+Shift+w mode "wurqinon"
 
 mode "wurqinon" {
-        bindsym c exec "qdbus org.kde.klipper /klipper setClipboardContents $(pwsh -F '/home/eric/w/personal/dotfiles/scripts/snippets-read.ps1' | rofi -dmenu -p 'Selection' | pwsh -F 'home/eric/w/personal/dotfiles/scripts/snippets-read.ps1')"; mode "default"
+        bindsym c exec "qdbus org.kde.klipper /klipper setClipboardContents $(pwsh -C '/home/eric/w/personal/dotfiles/scripts/snippets-read.ps1 | rofi -dmenu -p ''Snippet'' -i | /home/eric/w/personal/dotfiles/scripts/snippets-read.ps1')"; mode "default"
+        bindsym p exec "unlink ~/wc & ln -sf $(pwsh -C '& /home/eric/w/personal/dotfiles/scripts/get-projects.ps1 | rofi -dmenu -p ''Project'' -i -format ''i'' | /home/eric/w/personal/dotfiles/scripts/get-projects.ps1') ~/wc"; mode "default"
+        bindsym o exec "echo $PATH >> /tmp/pather.txt"; mode "default"
 
         bindsym Return mode "default"
         bindsym Escape mode "default"
