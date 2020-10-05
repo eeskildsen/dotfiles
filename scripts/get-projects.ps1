@@ -12,7 +12,7 @@ function GetProjects
 
     $PathParent = [IO.Path]::GetDirectoryName($Path)
 
-    Get-ChildItem -Path $Path -Include @('wurqon.json') -Recurse | ForEach-Object { $_.DirectoryName.Replace($PathParent + [IO.Path]::DirectorySeparatorChar, '') }
+    Get-ChildItem -Path $Path -Recurse -Directory | ForEach-Object { $_.FullName.Replace($PathParent + [IO.Path]::DirectorySeparatorChar, '') } | Sort-Object
 }
 
 $root = Resolve-Path '~/w'
